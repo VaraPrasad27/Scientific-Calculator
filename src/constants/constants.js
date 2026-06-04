@@ -24,21 +24,52 @@ const numOperatorsLabels = [
   { label: '=', value: '=' },
 ];
 
-const sc = [
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
-  { label: '' },
+const complexLabels = [
+  { label: '√(', value: 'sqrt(' },
+  { label: 'log(', value: 'log(' },
+  { label: 'ln(', value: 'ln(' },
+  { label: '(', value: '(' },
+  { label: ')', value: ')' },
+  { label: '!', value: '!' },
 ];
 
-export { numOperatorsLabels, sc };
+const triLabels = [
+  { label: 'arc', value: 'arc' },
+  { label: 'sin(', value: 'sin(' },
+  { label: 'cos(', value: 'cos(' },
+  { label: 'tan(', value: 'tan(' },
+];
+const inverseTriLabel = [
+  { label: 'hyp', value: 'hyp' },
+  { label: 'sin-1(', value: 'asin(' },
+  { label: 'cos-1(', value: 'acos(' },
+  { label: 'tan-1(', value: 'atan(' },
+];
+const hypLabels = [
+  { label: 'ahyp', value: 'ahyp' },
+  { label: 'sinh(', value: 'sinh(' },
+  { label: 'cosh(', value: 'cosh(' },
+  { label: 'tanh(', value: 'tanh(' },
+];
+const inverseHypLabels = [
+  { label: 'tri', value: 'tri' },
+  { label: 'sinh-1(', value: 'asinh(' },
+  { label: 'cosh-1(', value: 'acosh(' },
+  { label: 'tanh-1(', value: 'atanh(' },
+];
+
+const constValuesLabels = [
+  { label: 'π', value: 'pi' },
+  { label: 'e', value: 'e' },
+  // { label: 'i', value: 'i' },
+];
+
+export {
+  numOperatorsLabels,
+  triLabels,
+  inverseTriLabel,
+  hypLabels,
+  inverseHypLabels,
+  constValuesLabels,
+  complexLabels,
+};
