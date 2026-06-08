@@ -1,6 +1,5 @@
 import {
   complexLabels,
-  constValuesLabels,
   hypLabels,
   inverseHypLabels,
   inverseTriLabel,
@@ -9,6 +8,7 @@ import {
 } from './constants/constants.js';
 import { useEffect, useState } from 'react';
 import calculations from './calculations.js';
+import clsx from 'clsx';
 
 function App() {
   const [displayArray, setDisplayArray] = useState([]);
@@ -62,20 +62,22 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col">
-      <section className="h-40 w-full">
-        <div className="h-full w-full">{displayArray.join(' ')}</div>
+    <div className="h-fit w-1/4 m-5 flex flex-col items-center bg-[hsl(0,0%,5%)] rounded-2xl">
+      <section className="h-30 w-full mb-2">
+        <div className="h-full w-full p-5 bg-black text-white text-4xl rounded-2xl">
+          {displayArray.join(' ')}
+        </div>
       </section>
 
-      <div className="w-full flex flex-row gap-2">
+      <div className="mb-5 flex flex-col gap-2">
         <section
           id="sci-operators"
-          className="grid grid-cols-5 gap-2 justify-items-center"
+          className="grid grid-cols-6 gap-2 gap-x-0 justify-items-center place-items-center"
         >
           {complexLabels.map(({ label, value }) => (
             <button
               key={label}
-              className="w-20 h-10 border rounded-[40px]"
+              className="w-10 h-10 rounded-[40px] bg-[hsl(0,0%,10%)] text-white"
               value={value}
               onClick={handleClick}
             >
@@ -85,17 +87,7 @@ function App() {
           {dynamicBtns.map(({ label, value }) => (
             <button
               key={label}
-              className="w-20 h-10 border rounded-[40px]"
-              value={value}
-              onClick={handleClick}
-            >
-              {label}
-            </button>
-          ))}
-          {constValuesLabels.map(({ label, value }) => (
-            <button
-              key={label}
-              className="w-20 h-10 border rounded-[40px]"
+              className="w-12 h-7 rounded-[40px] text-xs bg-[hsl(0,0%,10%)] text-white"
               value={value}
               onClick={handleClick}
             >
@@ -110,7 +102,13 @@ function App() {
           {numOperatorsLabels.map(({ label, value }) => (
             <button
               key={label}
-              className="w-10 h-10 border rounded-[40px]"
+              className={clsx(
+                'w-10 h-10 rounded-[40px] bg-[hsl(0,0%,10%)] text-white',
+                {
+                  'bg-red-600 text-white font-bold':
+                    value === 'ac' || value === 'del',
+                }
+              )}
               value={value}
               onClick={handleClick}
             >

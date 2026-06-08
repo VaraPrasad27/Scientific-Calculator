@@ -31,6 +31,8 @@ const complexLabels = [
   { label: '(', value: '(' },
   { label: ')', value: ')' },
   { label: '!', value: '!' },
+  { label: 'π', value: 'pi' },
+  { label: 'e', value: 'e' },
 ];
 
 const triLabels = [
@@ -58,18 +60,11 @@ const inverseHypLabels = [
   { label: 'tanh-1(', value: 'atanh(' },
 ];
 
-const constValuesLabels = [
-  { label: 'π', value: 'pi' },
-  { label: 'e', value: 'e' },
-  // { label: 'i', value: 'i' },
-];
-
 export {
   numOperatorsLabels,
   triLabels,
   inverseTriLabel,
   hypLabels,
   inverseHypLabels,
-  constValuesLabels,
   complexLabels,
 };
