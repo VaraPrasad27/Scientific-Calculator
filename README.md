@@ -1,16 +1,41 @@
-# React + Vite
+# Scientific Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A scientific calculator web app built with React 19 and Vite, styled with Tailwind CSS 4. Expressions are evaluated with [mathjs](https://mathjs.org/).
 
-Currently, two official plugins are available:
+![Scientific calculator UI](Images/Screenshot_20260608_093843.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Basic arithmetic, parentheses, and exponentiation
+- Square root, natural log, and log
+- Factorial, π, and e
+- Trigonometry: sin, cos, tan and their inverses
+- Hyperbolic: sinh, cosh, tanh and their inverses
+- DEL and AC controls
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- React 19, Vite 8
+- Tailwind CSS 4 (via `@tailwindcss/vite`)
+- mathjs 15 for expression evaluation
+- ESLint + Prettier
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Scripts
+
+```bash
+npm run dev        # start dev server with HMR
+npm run build      # production build to dist/
+npm run preview    # preview the production build
+npm run lint       # run ESLint
+npm run format     # run Prettier
+```
+
+## Project structure
+
+```
+src/
+  App.jsx                 # UI, state, and button handling
+  calculations.js         # mathjs expression evaluator
+  constants/constants.js  # button labels and values
+  main.jsx                # React entry point
+```
